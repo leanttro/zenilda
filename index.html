@@ -678,8 +678,9 @@
             submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
 
             try {
-                // Envia para o nosso backend Python local
-                const response = await fetch('/api/cadastro', {
+                // ATENÇÃO: Agora apontamos para /zenilda-adv/api/cadastro
+                // Isso casa com a rota que definimos no Python
+                const response = await fetch('/zenilda-adv/api/cadastro', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
