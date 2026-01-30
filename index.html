@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +41,11 @@
 
     <style>
         /* --- ESTILOS GERAIS --- */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
         .gold-gradient {
             background: linear-gradient(135deg, #c5a059 0%, #e6c88b 50%, #c5a059 100%);
             background-size: 200% auto;
@@ -149,7 +154,7 @@
         }
     </style>
 </head>
-<body class="bg-cream text-gray-800 antialiased overflow-hidden overflow-x-hidden"> <div id="preloader" class="flex flex-col items-center justify-center overflow-hidden">
+<body class="bg-cream text-gray-800 antialiased overflow-hidden overflow-x-hidden w-full"> <div id="preloader" class="flex flex-col items-center justify-center overflow-hidden">
         <div class="relative flex flex-col items-center justify-center">
             <div class="logo-reveal font-serif text-3xl md:text-5xl font-bold text-gold-500 mb-12 tracking-[0.2em] uppercase text-center absolute -top-24 w-full">
                 Dra. Zenilda
@@ -218,7 +223,7 @@
     </header>
 
 
-    <header id="inicio" class="relative bg-wine-900 min-h-screen flex items-center pt-40 pb-12 lg:pt-32 lg:pb-0">
+    <header id="inicio" class="relative bg-wine-900 min-h-screen flex items-center pt-40 pb-12 lg:pt-32 lg:pb-0 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://res.cloudinary.com/dzcaxmbjn/image/upload/v1769782220/gemini-2.5-flash-image_Close-up_shot_of_the_Brazilian_female_lawyer_sitting_at_a_heavy_wooden_desk._She-0_su7ciq.jpg" alt="Background Texture" class="w-full h-full object-cover opacity-40 mix-blend-multiply">
             <div class="absolute inset-0 bg-gradient-to-r from-wine-900 via-wine-900/90 to-transparent"></div>
@@ -246,7 +251,7 @@
             </div>
 
             <div class="lg:col-span-5 relative block mt-10 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
-                <div class="absolute -top-10 -right-10 w-full h-full border-2 border-gold-500/30 rounded-lg"></div>
+                <div class="absolute -top-10 -right-4 lg:-right-10 w-full h-full border-2 border-gold-500/30 rounded-lg"></div>
                 <img src="https://res.cloudinary.com/dzcaxmbjn/image/upload/v1769782743/Sem_nome_1080_x_1380_px_cul5pn.png" class="w-full rounded-lg shadow-2xl relative z-10 border-b-8 border-gold-500 transform hover:scale-[1.02] transition duration-500 object-cover" alt="Dra Zenilda">
             </div>
         </div>
@@ -478,7 +483,7 @@
             // Tempo total da animação antes de sumir (aprox. 2.6 segundos)
             setTimeout(() => {
                 preloader.classList.add('loaded');
-                body.classList.remove('overflow-hidden'); // Remove a trava do BODY
+                body.classList.remove('overflow-hidden'); // Remove a trava vertical, mas mantem overflow-x-hidden definido na classe
                 
                 // Inicializa o AOS apenas depois que o site aparece
                 setTimeout(() => {
